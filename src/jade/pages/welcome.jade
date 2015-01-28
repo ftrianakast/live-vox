@@ -1,0 +1,41 @@
+include ./../includes/header
+
+div.container(ng-controller="WelcomeCtrl")
+
+  h3 Ejercicio Livevox
+  p En el siguiente ejercicio usted podrá ver el calendario ya se bien por horas, o cada dos horas
+
+  .col-centered.col-md-8.radios
+    .radio
+      input.radio-input(type="radio", ng-model="showOption", value="all", ng-change="executeChange()")
+      span.radio-text Hora por hora
+
+    .radio
+      input.radio-input(type="radio", ng-model="showOption", value="two", ng-change="executeChange()")
+      span.radio-text Cada dos horas
+
+  div.col-md-8.col-centered
+    table.table.table-bordered.table-striped
+      thead
+        tr
+          th
+          th Lunes
+          th Martes
+          th Miércoles
+          th Jueves
+          th Viernes
+          th Sábado
+          th Domingo
+
+      tbody
+        tr(ng-repeat="i in getTotalHours() track by $index", ng-show="isShown(initHour + $index)", class='fx-fade-up')
+          td {{ initHour + $index }}
+          td
+          td
+          td
+          td
+          td
+          td
+          td
+
+include ./../includes/footer

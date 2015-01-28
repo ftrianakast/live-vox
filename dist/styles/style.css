@@ -1,0 +1,25 @@
+body > .container {
+  padding: 60px 15px 0;
+}
+.col-centered {
+  float: none;
+  margin: 0 auto;
+}
+.color-green {
+  color: #a1cd3c;
+}
+.color-red {
+  color: #ee5f5b;
+}
+table {
+  margin: 50px 0px 50px 0px;
+}
+table tbody {
+  font-weight: normal;
+}
+table tbody td.action a:hover {
+  cursor: pointer;
+}
+.radios {
+  margin-top: 50px;
+}

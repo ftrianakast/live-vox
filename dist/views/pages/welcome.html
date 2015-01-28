@@ -1,0 +1,79 @@
+
+<header>
+  <nav class="navbar navbar-default">
+    <div class="container-fluid">
+      <div class="navbar-header"><a class="navbar-brand">Livevox</a></div>
+    </div>
+  </nav>
+</header>
+<div ng-controller="WelcomeCtrl" class="container">
+  <h3>Ejercicio Livevox</h3>
+  <p>En el siguiente ejercicio usted podrá ver el calendario ya se bien por horas, o cada dos horas</p>
+  <div class="col-centered col-md-8 radios">
+    <div class="radio">
+      <input type="radio" ng-model="showOption" value="all" ng-change="executeChange()" class="radio-input"/><span class="radio-text">Hora por hora</span>
+    </div>
+    <div class="radio">
+      <input type="radio" ng-model="showOption" value="two" ng-change="executeChange()" class="radio-input"/><span class="radio-text">Cada dos horas</span>
+    </div>
+  </div>
+  <div class="col-md-8 col-centered">
+    <table class="table table-bordered table-striped">
+      <thead>
+        <tr>
+          <th></th>
+          <th>Lunes</th>
+          <th>Martes</th>
+          <th>Miércoles</th>
+          <th>Jueves</th>
+          <th>Viernes</th>
+          <th>Sábado</th>
+          <th>Domingo</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr ng-repeat="i in getTotalHours() track by $index" ng-show="isShown(initHour + $index)" class="fx-fade-up">
+          <td>{{ initHour + $index }}</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+<footer class="footer top-space">
+  <div class="footer1">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-3 widget">
+          <h3 class="widget-title">Support</h3>
+          <div class="widget-body">
+            <p>(+57) 3108187426</p><br/><a href="mailto:#">ftrianakast@gmail.com</a><br/>Calle 6B No 9-26, Madrid Cundinamarca, Colombia
+          </div>
+        </div>
+        <div class="col-md-3 widget">
+          <h3 class="widget-title">Contact me</h3>
+          <div class="widget-body">
+            <p class="follow-me-icons"><a href="https://twitter.com/ftrianakast"><i class="fa fa-twitter fa-2"></i></a><a href="https://github.com/ftrianakast"><i class="fa fa-github fa-2"></i></a></p>
+          </div>
+        </div>
+        <div class="col-md-6 widget">
+          <h3 class="widget-title">LiveVox Info</h3>
+          <div class="widget-body">
+            <p>
+              LiveVox is the leading provider of cloud contact center solutions.
+              LiveVox offers an integrated hosted predictive dialer, ACD, IVR, call recording and business analytics suite.
+              The patented, fully burstable LiveVox platform utilizes carrier IP/MPLS networks and delivers
+              multi-site deployment, routing and controls. LiveVox is headquartered in San Francisco.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
